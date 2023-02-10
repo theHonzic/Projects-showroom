@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <cz.mendelu.thetrips.views.TextInputView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/destinationText"
+            app:hint="@string/destination"/>
+
+        <cz.mendelu.thetrips.views.TextInputView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/departureText"
+            app:hint="@string/departure"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <cz.mendelu.thetrips.views.InfoView
+                android:id="@+id/startDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:header="@string/start_date"
+                app:value="@string/not_set"
+                app:image="@drawable/ic_calendar_today"/>
+
+            <cz.mendelu.thetrips.views.InfoView
+                android:id="@+id/endDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:header="@string/end_date"
+                app:value="@string/not_set"
+                app:image="@drawable/ic_calendar_today"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_a_vehicle"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vehicleSpinner"/>
+
+        </LinearLayout>
+
+        <cz.mendelu.thetrips.views.TextInputView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/descriptionText"
+            app:hint="@string/description"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveButton"
+            android:text="@string/save_button"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

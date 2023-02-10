@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Images/arrowdown.png</file>
+        <file>Images/arrowleft.png</file>
+        <file>Images/arrowright.png</file>
+        <file>Images/arrowup.png</file>
+        <file>Images/lava.png</file>
+        <file>Images/voda.jpg</file>
+        <file>Images/wall.jpg</file>
+        <file>map.txt</file>
+        <file>GameGrid.qml</file>
+        <file>FieldTile.qml</file>
+        <file>Arrows.qml</file>
+        <file>Arrow.qml</file>
+        <file>Images/hero.png</file>
+        <file>Inventory.qml</file>
+        <file>InventoryTile.qml</file>
+        <file>Images/armor.png</file>
+        <file>Images/enemy.png</file>
+        <file>Images/enemy2.png</file>
+        <file>Images/enemy3.png</file>
+        <file>Images/potion.png</file>
+        <file>Images/sword.png</file>
+        <file>Images/button.png</file>
+        <file>Images/background.jpg</file>
+    </qresource>
+</RCC>

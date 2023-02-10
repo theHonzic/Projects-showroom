@@ -1,0 +1,18 @@
+{% extends '__main.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
+
+{% block content %}
+
+<section>
+  <form method=post>
+      <dl>
+        {{ render_field(form.email) }}
+        {{ render_field(form.password) }}
+      </dl>
+      <input type="submit" value=Submit>
+    </form>
+    <div>
+      <p>Are you new here? <a href="{{url_for('auth.new_customer')}}">Click to register</a></p>
+    </div>
+</section>
+{% endblock %}

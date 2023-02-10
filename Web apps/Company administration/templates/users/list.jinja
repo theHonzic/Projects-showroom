@@ -1,0 +1,116 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+<section>
+        <h2>Employees</h2>
+
+        <a href="{{url_for('users.user_new')}}">Create new employee</a>
+        
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Hourly wage</th>
+                <th>Role</th>
+                <th>Quick actions</th>
+            </tr>
+            {% for user in users %}
+                {% if user.registration_completed == 1 and user.id_employee != None%}
+                    <tr>
+                        <td>
+                            <a href="{{url_for('users.user_detail', id=user.id_user)}}">{{ user.id_user }}</a>
+                        </td>
+                        <td>
+                            {{ user.first_name }}
+                        </td>
+                        <td>
+                            {{ user.last_name }}
+                        </td>
+                        <td>
+                            {{ user.email }}
+                        </td>
+                        <td>
+                            {{ user.phone_number }}
+                        </td>
+                        <td>
+                            {{ user.hourly_wage }}
+                        </td>
+                        <td>
+
+                            {% if user.role == None%} Customer {% else %} {{ user.role }} {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{url_for('users.user_detail', id=user.id_user)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-pen"></i></a>
+                            {% if user.id_user != session['id_user']%} <a href="{{url_for('users.user_delete', id=user.id_user)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-trash"></i></a> {% endif %}
+                            {% if "Admin" == session['role'] and user.id_user != session['id_user']%} 
+                                {% if user.blocked == 0%}
+                                    <a href="{{url_for('users.user_block', id=user.id_user, value = 1)}}" style="padding: 3px;"><i class="fa-solid fa-ban"></i></a>
+                                {% else %}
+                                    <a href="{{url_for('users.user_block', id=user.id_user, value = 0)}}" style="padding: 3px;">Unblock</a>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+</section>
+
+<section>
+    <h2>Customers</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Pending registration</th>
+                <th>Quick actions</th>
+            </tr>
+            {% for user in users %}
+                {% if user.id_employee == None %}
+                    <tr>
+                        <td>
+                            <a href="{{url_for('users.user_detail', id=user.id_user)}}">{{ user.id_user }}</a>
+                        </td>
+                        <td>
+                            {{ user.first_name }}
+                        </td>
+                        <td>
+                            {{ user.last_name }}
+                        </td>
+                        <td>
+                            {{ user.email }}
+                        </td>
+                        <td>
+                            {{ user.phone_number }}
+                        </td>
+                        <td>
+
+                            {% if user.registration_completed == 0%} PENDING {% else %} COMPLETED {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{url_for('users.user_detail', id=user.id_user)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                            <a href="#" style="padding: 3px;"><i class="fa-sharp fa-solid fa-pen"></i></a>
+                            <a href="{{url_for('users.user_delete', id=user.id_user)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                            {% if user.registration_completed == 0 %} <a href="{{url_for('auth.confirm_customer_registration', id=user.id_user)}}" style="padding: 3px;"><i class="fa-solid fa-check"></i></a> {% endif %}
+                            {% if user.registration_completed == 1 %} 
+                                {% if user.blocked == 0%}
+                                    <a href="{{url_for('users.user_block', id=user.id_user, value = 1)}}" style="padding: 3px;"><i class="fa-solid fa-ban"></i></a>
+                                {% else %}
+                                    <a href="{{url_for('users.user_block', id=user.id_user, value = 0)}}" style="padding: 3px;">Unblock</i></a>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+</section>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+
+<h2>Info about order number {{ order.id_order }}</h2>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Count</th>
+    </tr>
+
+    {% for item in items %}
+        <tr>
+            <td><a href="{{url_for('telephones.telephone_detail', id=item.id_telephone)}}">{{ item.model }}</a></td>
+            <td>{{ item.piece_count }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
+
+
+{% endblock %}

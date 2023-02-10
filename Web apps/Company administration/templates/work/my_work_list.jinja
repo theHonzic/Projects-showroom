@@ -1,0 +1,34 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+<section>
+        <h2>Telephones I've made</h2>
+        <h3>Total: {{ total }}CZK</h3>
+        <a href="{{url_for('work.new_work', id_employee=id_employee)}}">Work on a new model</a>
+        <table>
+            <tr>
+                <th>Model ID</th>
+                <th>Model</th>
+                <th>Hours spent</th>
+                <th>Money made working on this phone</th>
+                <th>Work</th>
+            </tr>
+
+            {% for item in work %}
+                <tr>
+                    <td><a href="{{url_for('telephones.telephone_detail', id=item.id_telephone)}}">{{ item.id_telephone }}</a></td>
+                    <td><a href="{{url_for('telephones.telephone_detail', id=item.id_telephone)}}">{{ item.model }}</a></td>
+                    <td>{{item.hours_spent}}</td>
+                    <td>{{ item.hours_spent*item.hourly_wage }}</td>
+                    <td>
+                        <a href="{{url_for('work.build', id_employee=id_employee, id_telephone=item.id_telephone)}}" style="padding: 3px;"><i class="fa-solid fa-hammer"></i>   Build this phone</a>
+                        
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+</section>
+
+{% endblock %}

@@ -1,0 +1,3 @@
+C:/Users/honzi/Desktop/Repository/zoo_ls2020_projekt/cmake-build-debug/CMakeFiles/zoo_ls2020_projekt.dir
+C:/Users/honzi/Desktop/Repository/zoo_ls2020_projekt/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/honzi/Desktop/Repository/zoo_ls2020_projekt/cmake-build-debug/CMakeFiles/rebuild_cache.dir

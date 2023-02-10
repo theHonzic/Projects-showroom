@@ -1,0 +1,22 @@
+{% extends '__main.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
+
+{% block content %}
+  <section>
+    <h2>Edit {{ user.first_name }} {{ user.last_name }}</h2>
+    <form method=post>
+        <dl>
+          {{ render_field(form.first_name) }}
+          {{ render_field(form.last_name) }}
+          {{ render_field(form.email) }}
+          {{ render_field(form.phone_number) }}
+          <!-- User is employee-->
+          {% if user.id_employee != None %}
+            {{ render_field(form.hourly_wage) }}
+            {{ render_field(form.employee_type)}}
+          {% endif %}
+        </dl>
+        <input type="submit" value=Submit>
+      </form>
+  </section>
+{% endblock %}

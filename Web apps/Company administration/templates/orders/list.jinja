@@ -1,0 +1,37 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+<section>
+        <h2>Order list</h2>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Ordered by</th>
+                <th>Status</th>
+                <th>Quick actions</th>
+            </tr>
+
+            {% for order in orders %}
+                <tr>
+                    <td><a href="{{url_for('orders.order_detail', id=order.id_order)}}" title="Show order">{{ order.id_order }}</a></td>
+                    <td><a href="{{url_for('users.user_detail', id=order.id_user)}}" title="Show user">{{ order.first_name }} {{ order.last_name }}</a></td>
+                    {% if order.processed == 1 %}
+                        <td><i class="fa-regular fa-box"></i> Order dispatched</td>
+                    {% else %}
+                        <td><i class="fa-regular fa-box-open"></i> Awaiting dispatch</td>
+                    {% endif %}
+                    <td>
+                        <a href="{{url_for('orders.order_detail', id=order.id_order)}}" style="padding: 3px;" title="Show order"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                        
+                        {% if order.processed == 0 %}
+                            <a href="{{url_for('orders.dispatch_order', id=order.id_order)}}" style="padding: 3px;" title="Dispatch"><i class="fa-regular fa-box"></i></a>
+                        {% endif %}
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+</section>
+
+{% endblock %}

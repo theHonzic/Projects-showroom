@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "iron-man-drawing-bruce-banner-mask-captain-america-iron-man-6300cab3149518bfddcf709463bd1e71.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

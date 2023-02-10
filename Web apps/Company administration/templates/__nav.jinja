@@ -1,0 +1,51 @@
+{% block nav %}
+    <div
+        class="hamburger"
+        onclick="document.getElementById('nav').classList.toggle('visible')"
+    >
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <header>
+    </header>
+    <nav id="nav">      
+        <!--Signed in-->  
+        {% if session['authenticated'] %}
+            <!--Employees-->
+            {% if session['role'] != None%}
+                <!--Admin rights-->
+                {% if session['admin'] == 1%}
+                    <a href="{{url_for('homepage.index')}}">Home</a>
+                    <a href="{{url_for('users.user_list')}}">Users</a>
+                    <a href="{{url_for('telephones.telephone_list')}}">Telephones</a>
+                    <a href="{{url_for('users.user_detail', id=session['id_user'])}}">My profile</a>
+                    <a href="{{url_for('auth.signout')}}">Logout {{session['login']}}</a>
+                <!--Non-admin rights-->
+                {% else %}
+                    <a href="{{url_for('homepage.index')}}">Home</a>
+                    {% if session['role'] == "Assembler" %}
+                        <a href="{{url_for('work.work_list', id=session['id_user'])}}">My work</a>
+                    {% endif %}
+                    <a href="{{url_for('telephones.telephone_list')}}">Telephones</a>
+                    {% if session['role'] == 'Warehouse worker' %}
+                        <a href="{{url_for('components.component_list')}}">Components</a>
+                        <a href="{{url_for('orders.order_list')}}">Manage orders</a>
+                    {% endif %}
+                    <a href="{{url_for('users.user_detail', id=session['id_user'])}}">My profile</a>
+                    <a href="{{url_for('auth.signout')}}">Logout {{session['login']}}</a>
+                {% endif%}
+            <!--Not employees-->
+            {% else %}
+                <a href="{{url_for('homepage.index')}}">Home</a>
+                <a href="{{url_for('telephones.telephone_list')}}">Browse phones</a>
+                <a href="{{url_for('users.user_detail', id=session['id_user'])}}">My profile</a>
+                <a href="{{url_for('auth.signout')}}">Logout {{session['login']}}</a>
+            {% endif %}
+        <!--Not signed in-->
+        {% else %}
+            <a href="{{url_for('homepage.index')}}">Home</a>
+            <a href="{{url_for('auth.sign_in')}}">Sign in</a>
+        {% endif %}
+    </nav>
+
+    
+{% endblock%}

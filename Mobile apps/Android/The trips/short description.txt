@@ -1,0 +1,5 @@
+CZE
+Aplikace pro evidenci výletů. Zobrazte si, kde jste byli a sdílejte s přáteli.
+
+ENG
+App to store your trips. Keep track of your trips and share with yout friends.

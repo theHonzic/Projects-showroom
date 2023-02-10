@@ -1,0 +1,64 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+
+<h2>{{ telephone.model }}</h2>
+<h3> Price: {{ sale_cost }} CZK</h3>
+
+
+<h3>These are the components used in this phone:</h3>
+{% if session['role'] == "Admin" %}<a href="{{url_for('telephones.add_components', id=telephone.id_telephone)}}">Add new component to this phone</a>{% endif %}
+
+<!--List of components-->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total price</th>
+    </tr>
+
+    {% for component in components %}
+        <tr>
+            <td> <a href="{{url_for('components.component_detail', id=component.id_component)}}"> {{ component.name }} </a></td>
+            <td> {{ component.piece_count }} </td>
+            <td> {{ component.price }} </td>
+            <td> {{ (component.price * component.piece_count) }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+{% if session['authenticated'] != None %}
+    {% if session['role'] != None%}
+        <h3>The manufacture cost is {{ manufacture_cost }}CZK.</h3>
+    <h3> There is {{ piece_count }} pieces in stock. These are the telephones and who made them:</h3>
+    <!--List of telephones and employees-->
+    <table>
+        <tr>
+            <th>Serial number</th>
+            <th>Employee ID</th>
+            <th>Hours spent</th>
+            <th>Cost</th>
+        </tr>
+
+        {% for item in telephones %}
+            <tr>
+                <td> {{item.serial_number}} </td>
+                <td><a href="{{url_for('users.user_detail', id=item.id_user)}}"> {{ item.id_employee }} </a></td>
+                <td> {{ item.hours_spent }} </td>
+                <td> {{ item.hours_spent * item.hourly_wage }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <a href="{{url_for('orders.buy_telephone', id_user=session['id_user'], id_telephone=telephone.id_telephone)}}">Buy {{telephone.model}}</a>
+    {% endif %}
+{% else %}
+
+{% endif %}
+{% endblock %}

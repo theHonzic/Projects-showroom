@@ -1,0 +1,34 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+<section>
+        <h2>Components list</h2>
+        <a href="{{url_for('components.new_component')}}">Add new component</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Pieces avaiable</th>
+                <th>Price</th>
+                <th>Quick actions</th>
+            </tr>
+
+            {% for component in components %}
+                <tr>
+                    <td><a href="{{url_for('components.component_detail', id=component.id_component)}}">{{ component.id_component }}</a></td>
+                    <td><a href="{{url_for('components.component_detail', id=component.id_component)}}">{{ component.name }}</a></td>
+                    <td>{{ component.pieces_available }}</td>
+                    <td>{{ component.price }}</td>
+                    <td>
+                        <a href="{{url_for('components.component_detail', id=component.id_component)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                        <a href="{{url_for('components.component_delete', id = component.id_component)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                        <a href="{{url_for('components.increase_components', id = component.id_component)}}" style="padding: 3px;"><i class="fa-solid fa-arrow-up"></i></a>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+</section>
+
+{% endblock %}

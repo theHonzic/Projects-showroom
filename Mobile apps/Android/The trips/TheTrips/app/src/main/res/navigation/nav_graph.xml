@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/upcomingTripsFragment"
+        android:name="cz.mendelu.thetrips.fragments.UpcomingTripsFragment"
+        android:label="@string/upcoming_trips_fragment_label"
+        tools:layout="@layout/fragment_upcoming_trips" >
+
+        <action
+            android:id="@+id/action_upcomingTripsFragment_to_addNewTripFragment2"
+            app:destination="@id/addNewTripFragment2" />
+
+        <action
+            android:id="@+id/action_upcomingTripsFragment_to_tripDetailFragment"
+            app:destination="@id/tripDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNewTripFragment2"
+        android:name="cz.mendelu.thetrips.fragments.AddNewTripFragment"
+        android:label="@string/add_new_trip_fragment_label"
+        tools:layout="@layout/fragment_add_new_trip" />
+
+    <fragment
+        android:id="@+id/pastTripsFragment"
+        android:name="cz.mendelu.thetrips.fragments.PastTripsFragment"
+        android:label="@string/past_trips_fragment_label"
+        tools:layout="@layout/fragment_past_trips" >
+
+        <action
+            android:id="@+id/action_pastTripsFragment_to_addNewTripFragment2"
+            app:destination="@id/addNewTripFragment2" />
+
+        <action
+            android:id="@+id/action_pastTripsFragment_to_tripDetailFragment"
+            app:destination="@id/tripDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="cz.mendelu.thetrips.fragments.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_homeFragment_to_tripDetailFragment"
+            app:destination="@id/tripDetailFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_pastTripsFragment"
+            app:destination="@id/pastTripsFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_upcomingTripsFragment"
+            app:destination="@id/upcomingTripsFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_addNewTripFragment2"
+            app:destination="@id/addNewTripFragment2" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_appInfoFragment"
+            app:destination="@id/appInfoFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="cz.mendelu.thetrips.fragments.MapsFragment"
+        android:label="@string/map_fragment_label"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/tripDetailFragment"
+        android:name="cz.mendelu.thetrips.fragments.TripDetailFragment"
+        android:label="@string/trip_detail_fragment_label"
+        tools:layout="@layout/fragment_trip_detail" >
+
+        <action
+            android:id="@+id/action_tripDetailFragment_to_updateTripFragment"
+            app:destination="@id/updateTripFragment" />
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="-1L">
+        </argument>
+
+        <action
+            android:id="@+id/action_tripDetailFragment_to_tripDetailMap"
+            app:destination="@id/tripDetailMap" />
+
+        <action
+            android:id="@+id/action_tripDetailFragment_to_shareFragment"
+            app:destination="@id/shareFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateTripFragment"
+        android:name="cz.mendelu.thetrips.fragments.UpdateTripFragment"
+        android:label="@string/update_trip_fragment_label"
+        tools:layout="@layout/fragment_update_trip">
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="-1L">
+        </argument>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/tripDetailMap"
+        android:name="cz.mendelu.thetrips.fragments.TripDetailMapFragment"
+        android:label="@string/trip_detail_map_fragment_label"
+        tools:layout="@layout/fragment_trip_detail_map">
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="-1L">
+        </argument>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/appInfoFragment"
+        android:name="cz.mendelu.thetrips.fragments.AppInfoFragment"
+        android:label="@string/app_info_fragment_label"
+        tools:layout="@layout/fragment_app_info" />
+
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="cz.mendelu.thetrips.fragments.ShareFragment"
+        android:label="@string/fragment_share_label"
+        tools:layout="@layout/fragment_share">
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="-1L">
+        </argument>
+
+    </fragment>
+
+</navigation>

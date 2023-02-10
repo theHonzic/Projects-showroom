@@ -1,0 +1,29 @@
+<footer>
+    <div>
+      <h3>Rychlé odkazy</h3>
+      <ul>
+        <li>
+            <a href="{{url_for('homepage.index')}}">Home</a>
+        </li>
+        <li>
+            <a href="{{url_for('telephones.telephone_list')}}">Telephones</a>
+        </li>
+        
+        {% if session['authenticated'] != None%}{% else %}
+          <li>
+            <a href="{{url_for('auth.sign_in')}}">Sign in</a>
+          </li>
+        {% endif%}
+    
+        
+      </ul>
+    </div>
+    <div>
+      <h3>Kontakt</h3>
+        <address>
+          B2B Phone<br>
+          Zemědělská 1 <br>
+          Brno, 613 00
+        </address>
+    </div>
+</footer>

@@ -1,0 +1,47 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+<section>
+        <h2>Telephone list</h2>
+        {% if session['role'] == "Admin" %}<a href="{{url_for('telephones.telephone_new')}}">Add new telephone model</a>{% endif %}
+        
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Model</th>
+                <th>Pieces avaiable</th>
+                {% if session['role'] != None %}<th>Quick actions</th>{% endif %}
+            </tr>
+
+            {% for telephone in telephones %}
+                <tr>
+                    <td><a href="{{url_for('telephones.telephone_detail', id=telephone.id_telephone)}}">{{ telephone.id_telephone }}</a></td>
+                    <td><a href="{{url_for('telephones.telephone_detail', id=telephone.id_telephone)}}">{{ telephone.model }}</a></td>
+                    <td>{{ telephone.count }}</td>
+                    {% if session['authenticated'] == 1 %}
+                        {% if session['admin'] == 1%}
+                            <td>
+                                <a href="{{url_for('telephones.telephone_detail', id=telephone.id_telephone)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                                <a href="#" style="padding: 3px;"><i class="fa-sharp fa-solid fa-pen"></i></a>
+                                <a href="#" style="padding: 3px;"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                            </td>
+                        {% else %}
+                            {% if session['role'] == "Assembler"%}
+                                <td>
+                                    <a href="{{url_for('work.build', id_employee=session['id_employee'], id_telephone=telephone.id_telephone)}}" style="padding: 3px;"><i class="fa-solid fa-hammer"></i>   Build this phone</a>
+                                </td>
+                            {% endif %}
+                            {% if session['role'] == "Warehouse worker"%}
+                                <td>
+                                    <a href="{{url_for('telephones.telephone_detail', id=telephone.id_telephone)}}" style="padding: 3px;"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                                </td>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+</section>
+
+{% endblock %}

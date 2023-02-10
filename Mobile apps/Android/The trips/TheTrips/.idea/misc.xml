@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.3041025641025641" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.151" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.126" />
+        <entry key="app/src/main/res/drawable/ic_bus.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_car.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_google_calendar_icon.xml" value="0.212" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.151" />
+        <entry key="app/src/main/res/drawable/ic_plane.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_ship.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_train.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.1" />
+        <entry key="app/src/main/res/font/roboto_mono.xml" value="0.3076923076923077" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3320688883463542" />
+        <entry key="app/src/main/res/layout/activity_my.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/closest_trip_card_layout.xml" value="0.25245901639344265" />
+        <entry key="app/src/main/res/layout/content_my.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add_new_trip.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_app_info.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25255584716796875" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.2128623188405797" />
+        <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_maps2.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_past_trips.xml" value="0.1721014492753623" />
+        <entry key="app/src/main/res/layout/fragment_share.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_trip_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_trip_detail_map.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_upcoming_trips.xml" value="0.2128623188405797" />
+        <entry key="app/src/main/res/layout/fragment_update_trip.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/row_trip_list.xml" value="0.2413793103448276" />
+        <entry key="app/src/main/res/layout/row_trip_list_content.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/view_info.xml" value="0.4166666666666667" />
+        <entry key="app/src/main/res/layout/view_info_message.xml" value="0.13697916666666668" />
+        <entry key="app/src/main/res/layout/view_text_input.xml" value="0.16393442622950818" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_car.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.151" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

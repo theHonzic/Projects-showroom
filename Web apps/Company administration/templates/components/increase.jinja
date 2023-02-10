@@ -1,0 +1,14 @@
+{% extends '__main.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
+
+{% block content %}
+  <section>
+    <h2>Increase the count of {{ component.name }} in the stock</h2>
+    <form method=post>
+        <dl>
+          {{ render_field(form.count) }}
+        </dl>
+        <input type="submit" value=Add pieces>
+      </form>
+  </section>
+{% endblock %}

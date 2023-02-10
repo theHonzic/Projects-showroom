@@ -1,0 +1,26 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+
+<h2>Info about component {{ component.name }}</h2>
+
+<h3>This is where you can find this component: </h3>
+<table>
+    <tr>
+        <th>Telephone</th>
+        <th>Count</th>
+        <th>Total value</th>
+    </tr>
+
+    {% for telephone in telephones %}
+        <tr>
+            <td><a href="{{url_for('telephones.telephone_detail', id=telephone.id_telephone)}}">{{ telephone.model }}</a></td>
+            <td>{{ telephone.piece_count}}</td>
+            <td>{{ telephone.piece_count * component.price }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

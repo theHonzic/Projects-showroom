@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name" translatable="false">The Trips</string>
+    <string name="unknown">unknown</string>
+    <!--Fragment labels-->
+    <string name="upcoming_trips_fragment_label">Upcoming trips</string>
+    <string name="past_trips_fragment_label">Past trips</string>
+    <string name="add_new_trip_fragment_label">New trip</string>
+    <string name="map_fragment_label">Map</string>
+    <string name="update_trip_fragment_label">Update trip</string>
+    <string name="trip_detail_fragment_label">Trip detail</string>
+    <string name="trip_detail_map_fragment_label">Destination of the trip</string>
+    <string name="app_info_fragment_label">App info</string>
+    <string name="fragment_share_label">Share the trip</string>
+    <!--END Fragment labels-->
+    <!--Home fragment buttons-->
+    <string name="delete_dialog_q">Are you sure you want to delete your trip to </string>
+    <string name="delete_dialog_title">Delete the trip</string>
+    <string name="yes">Yes</string>
+    <string name="no_trips">There are no trips stored yet. :( Click to save your first trip.</string>
+    <string name="no">No</string>
+    <string name="show">Show</string>
+    <string name="no_upcoming">Upcoming trip will be displayed here. You have none. :(</string>
+    <string name="home_fragment_upcoming_button">upcoming trips</string>
+    <string name="home_fragment_past_button">past trips</string>
+    <string name="home_fragment_map_button">trips on a map</string>
+    <string name="name_note">Note: For more customized content, change your name via info icon on the left.</string>
+    <!--END Home fragment buttons-->
+    <!--Vehicles list-->
+    <string name="plane">Plane</string>
+    <string name="bus">Bus</string>
+    <string name="car">Car</string>
+    <string name="train">Train</string>
+    <string name="ship">Ship</string>
+    <!--END Vehicles list-->
+    <!--Card strings-->
+    <string name="from">From</string>
+    <string name="trip_to">Trip to</string>
+    <string name="to_lower_case">to</string>
+    <!--END Card strings-->
+    <!--Form-->
+    <string name="destination">Destination</string>
+    <string name="departure">Departure</string>
+    <string name="description">Description</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="not_set">Not set</string>
+    <string name="pick_a_vehicle">Pick a vehicle</string>
+    <string name="save_button">Save</string>
+    <string name="text_input_error">This field should not be empty</string>
+    <string name="date_dialog_title">Check dates</string>
+    <string name="date_dialog_text">The trip should not end before it even began.</string>
+    <string name="okay" translatable="false">Okay</string>
+    <!--END Form-->
+    <!--App info fragment-->
+    <string name="version">Version: </string>
+    <string name="row_count">Number of trips in the database: </string>
+    <string name="delete_all">Delete all</string>
+    <string name="name">Name</string>
+    <string name="add_name">Add your name for more customized content :)</string>
+    <string name="change_name">You can change your name below :)</string>
+    <string name="delete_all_dialog">Are you sure you want to erase all the records?</string>
+    <!--END App info fragment-->
+    <!--Trip detail-->
+    <string name="departure_from">Departure: </string>
+    <string name="start_date_">Start of the trip: </string>
+    <string name="end_date_">End of the trip: </string>
+    <string name="description_">Description: </string>
+    <string name="options">Options</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="show_on_map">Show on a map</string>
+    <string name="add_to_calendar">Add to calendar</string>
+    <!--END Trip detail-->
+    <!--Share fragment-->
+    <string name="QR_instructions">Scan the QR code above to save this trip to your Google Calendar.</string>
+    <string name="share">Share</string>
+    <string name="end_of_the_trip_in">End of the trip in</string>
+    <!--END Share fragment-->
+</resources>
